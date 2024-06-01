@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMES.COM</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <nav>
+        <p class="logo">GAMES.COM</p>
+        <div class="navCONT">
+            <a class="nav" href="">Tendencias</a>
+            <a class="nav" href="">Nuevos</a>
+            <a class="navBTN" href="formulario.html">Iniciar Sesión</a>
+        </div>
+    </nav>
+    
+
+    <div class="firtsPart">
+      <div class="scroll">
+            <div class="rowSCROLL">
+                <div class="hold"><img class="img" src="images/Battlefield.jpg" alt=""></div><div class="hold"><img class="img" src="images/Valley.jpg" alt=""></div><div class="hold"><img class="img" src="images/halo.jpg" alt=""></div> <div class="hold"><img class="img" src="images/persia.png" alt=""></div> <div class="hold"><img class="img" src="images/speedstorm.jpeg" alt=""></div>
+            </div>
+      </div>
+      <div class="firstMensaje">
+        <p class="titleONE">Juegos de consola y pc ilimitados en un solo lugar</p><br><br>
+        <button class="oneBTN"><b>Registrate</b></button>
+      </div>
+    </div>
+
+
+    <input type="checkbox" name="" id="drop">
+    <div class="secPart">
+        <div class="in">
+          <p class="p secTI">¿Qué juego buscas?</p>
+          <input type="text" placeholder="Buscar...">
+          <label for="drop" class="drop twoBTN" id="buscar">Buscar</label>
+        </div>
+    </div>
+
+    <div class="lastCont">
+        <div class="imgPLAY"><img src="images/Battlefield.jpg" alt=""></div>
+        <div class=""><p class="lastPARR">Battlefield 1 es un videojuego de disparos y acción bélica en primera persona. El título fue desarrollado por EA Digital Illusions CE y distribuido por Electronic Arts para PlayStation 4, Xbox One y Microsoft Windows. Es el décimo quinto juego de la serie Battlefield y el primer título de la serie que se ambienta en la Primera Guerra Mundial por Electronic Arts desde Wings of Glory en 1994. El juego fue confirmado en mayo de 2016 por Electronic Arts.1​ Su lanzamiento ocurrió el 21 de octubre de 2016.</p></div>
+        <div class="lastBtnCONT">
+           <button class="lastBTN">Más info</button>
+           <button class="lastBTN">Descargar</button><button class="lastBTN">Jugar</button>
+        </div>
+    </div>
+
+    <div class="lastPart">
+        <p class="titleLast">MÁS JUGADOS 2024</p>
+        <div class="scrollBar">
+              <div class="row">
+                  <div class="holdGame"><img class="imgMost" src="images/hogwarts.jpg" alt=""></div><div class="holdGame"><img class="imgMost" src="images/gow.jpg" alt=""></div><div class="holdGame"><img class="imgMost" src="images/horizon.jpg" alt=""></div> <div class="holdGame"><img class="imgMost" src="images/horizonf.jpg" alt=""></div> <div class="holdGame"><img class="imgMost" src="images/modern.jpg" alt=""></div>
+              </div>
+        </div>
+    </div>
+
+    <div class="pruebaAPI" id="apiContenedor">
+        <div class="circle"></div><p class="topNew">TOP NEW</p>
+        <p class="titleRM">RICK AND MORTY: VIRTUAL RICK-ALITY</P>
+        <div class="row">
+            <div class="Halfwid"><img class="imgGame" src="images/virtual-rick-ality_616x353.jpg" alt=""> 
+                <div class="descrCalificacion">
+                    <div class="review"><p class="mature">Mature 17+</p><p class="descr">Crude Humor,
+                    Drug Reference,<br>Fantasy Violence, Strong Language.</p></div>
+                    <p class="description">Rick and Morty have teleported into your living room for a cutting-edge VR adventure from
+                    Adult Swim Games and Owlchemy Labs (Job Simulator). Play as a Morty clone as you explore Rick's garage,
+                    the Smith household, and alien worlds.</p>
+                    <p class="description">Features: <br>
+                        -It's your favorite 2D characters in 3D. It's RICK AND MORTY VR! They're 3D now! <br>
+                        -Probe, prod, throw and smash iconic items like the Plumbus. <br>
+                        -Also, it's got this thing! <br>
+                        -Teleport around rooms and walk through portals. <br>
+                        -No really! You walk with your actual feet through virtual portals! <br>
+                        -Get yelled at by Rick, and question your own self-worth. <br>
+                        -Smack Rick in the face. <br>
+                        -Real fake doors!</p></div>
+                </div>
+            <div class="randomGame"><div id="showApi"></div><button id="randomBtn">PLAY</button></div>
+        </div>
+    </div>
+
+
+    <footer> <div class="inFOO">
+        <p class="fo">Terminos y condiciones</p><p class="fo">Preguntas frecuentes</p><p class="fo">Ayuda</p>
+    </div></footer>
+
+    <script>
+        let start = 1; //Math.round(Math.random() * 826) ---- 608,
+        const apiContenedor = document.getElementById('apiContenedor'),
+              showApi = document.getElementById('showApi'),
+              link = 'https://rickandmortyapi.com/api/character/',
+              randomBtn = document.getElementById('randomBtn');
+
+
+        fetch(`${link}+${start}`) // https://www.freetogame.com/api/games ------- https://bymykel.github.io/CSGO-API/api/es-MX/skins.json ------- https://api.disneyapi.dev/character
+        .then(res => res.json())
+        .then(api=>{
+                let img = api.image,
+                    nombre = api.name,
+                    especie = api.species,
+                    id = api.id;
+                showApi.innerHTML = `<p class="res">QUÉ PERSONAJE DEL NUEVO JUEGO DE RICK & MORTY ERES</p>
+                                     <img src="${img}"><br><p class="nombre">${nombre}</p><p>${especie}</p><p>${id}</p>`;
+                randomBtn.addEventListener('click', ()=>{
+                    for (let i = 1; i < 827; i++){
+                        if (start == 1){
+                            const random = Math.round(Math.random() * 826),
+                                  randomCharacter = `${link}+${random}`;
+                            if(random === 0 || random === 608){ //curseToAllAntichrist'Worshippers
+                                continue;
+                            }
+                            fetch(`${randomCharacter}`)
+                            .then(res => res.json())
+                            .then(api=>{
+                                img = api.image;
+                                nombre = api.name;
+                                especie = api.species;
+                                id = api.id;
+
+                                showApi.innerHTML = `<p class="res">ERES</p><img src="${img}"><br><p class="nombre">${nombre}</p>
+                                                     <p>${especie}</p><p>${id}</p>`;
+                            });
+                            }
+                        }
+                    });
+            });
+            
+    </script>
+
+
+</body>
+</html>

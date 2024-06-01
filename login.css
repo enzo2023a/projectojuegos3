@@ -1,0 +1,49 @@
+body{
+background-color: chocolate;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.iniciodese{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+   width: 400px;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 60px;
+   border-radius: 10px;
+   margin-top: 80px;
+   border: 3px solid midnightblue;
+  
+
+}
+input{
+    border-radius: 5px;
+    padding: 5px;
+    margin: 3px;
+    margin-top: 2px;
+    border: 3px solid midnightblue;
+}
+button{
+    margin-top: 3px;
+    border-radius: 5px;
+    padding: 3px;
+    background-color: midnightblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+button:hover{
+    background-color: crimson;
+    transition: 0.3s;
+}
+.iniciodese:-webkit-input-placeholder{
+    color: brown;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+}
+
+#error{
+    color: red;
+}

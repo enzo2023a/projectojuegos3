@@ -1,0 +1,68 @@
+body{
+    
+background-image: url(images/photocall-juegos-neon-dibujado-mano_23-2149860761.avif);
+background-size: 1330px 450px;
+font-family: Georgia, 'Times New Roman', Times, serif;
+margin: 0;
+padding: 0;
+}
+
+.form{
+    color: white;
+    text-align: center;
+    margin-top: 70px;
+   display: flex;
+   flex-direction: column;
+    width: 400px;
+    margin-left: 435px;
+    border-radius: 10px;
+    border: 10px solid midnightblue;
+    padding: 20px 8px;
+    background-color: rgb(2, 15, 15);
+    
+}
+input{
+    width: 90%;
+    border-radius: 10px;
+    border: 5px solid midnightblue;
+    margin:5px ;
+    padding: 10px;
+    color: rgb(15, 13, 13);
+    outline: none;
+}
+
+.checkbox{
+    display: flex;
+    width: 20%;
+    
+}
+.texchebox{
+    margin-left: 5px;
+    font-size: 11px;
+}
+
+.boton{
+    background-color:midnightblue;
+    width: 30%;
+    border-radius: 8px;
+    padding: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.boton:hover{
+    background-color: crimson;
+    transition: 0.5s;
+}
+
+select{
+    width: 98%;
+    border-radius: 10px;
+    border: 5px solid midnightblue;
+    margin:5px ;
+    padding: 10px; 
+}
+
+a{
+    text-decoration: none;
+    color: grey;
+    margin-right: 273px;
+}
